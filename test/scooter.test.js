@@ -1,1 +1,1 @@
-const Scooter = require('src/scooter')
+const Scooter = require('../src/scooter')
