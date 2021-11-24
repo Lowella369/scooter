@@ -1,0 +1,1 @@
+const Scooter = require('src/scooter')
