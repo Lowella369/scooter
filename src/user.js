@@ -1,5 +1,3 @@
-const Scooter = require('./scooter')
-
 class User {
 
     static registeredUsers = []
@@ -35,39 +33,24 @@ class User {
         let found = false
 
         console.log(User.registeredUsers.length)
-        for(let i=0; i < User.registeredUsers.length; i ++){
+        for(let i=0; i < User.registeredUsers.length; i++){
             if(User.registeredUsers[i].userID == userID  && User.registeredUsers[i].password == password){
-                console.log(`${userID} has successfully logged in`)
-                return  true
+                found = true
+                break
             }
             else {
-                console.log('UserID or password is incorrect!')
-                return false
+                found = false
             }
         }
 
-        // if(found == true){
-        //     console.log(`${userID} has successfully logged in`)
-        // }
-        // else {
-        //     console.log('UserID or password is incorrect!')
-        // }
+         if(found === true){
+             console.log(`${userID} has successfully logged in`)
+         }
+         else {
+             console.log('UserID or password is incorrect!')
+         }
     }
       
 }
-
-const user =  new User('Lowella', 'lowella1', 'test1', '0',18,'')
-user.createsAccount()
-//console.log(User.registeredUsers)
-const user1 =  new User('Melissa', 'Melissa1', 'test1', '0',18,'')
-user1.createsAccount()
-user1.login(user1.userID, user1.password)
-//console.log(user)
-//const user1 =  new User('Melissa', 'Melissa1', 'test1', '0',18,'')
-//user.createsAccount(user1)
-//const scooter = new Scooter('lowella1', 'scooter1', 'DFW', 0, 'false', '123')
-//user.pay(10)
-//console.log(user)
-//console.log(User.registeredUsers)
 
 module.exports = User
