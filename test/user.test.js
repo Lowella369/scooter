@@ -42,4 +42,16 @@ describe('User Class', () => {
         testUser.pay(30)
         expect(testUser.payment).toBe(30)
     })
+
+    test('User has login', () => {
+        const testUser = new User('Lowella', 'lowella1', 'test1', false,18,'scooter1')
+        testUser.createsAccount()
+
+        testUser.login(testUser.userID, testUser.password)
+
+        //I'm not sure if this is the correct way to test if the user 
+        //has successfully logged in
+        expect(User.registeredUsers[0].userID).toBe('lowella1')
+        expect(User.registeredUsers[0].password).toBe('test1')
+    })
 })
